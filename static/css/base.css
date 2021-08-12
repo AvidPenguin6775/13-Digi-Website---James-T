@@ -1,0 +1,40 @@
+#navBar{
+    background-color: aquamarine;
+}
+#navButton{
+    float: right;
+    width:70px;
+    height:45px;
+}
+
+#title {
+    font-size: 24px;
+    text-align: center;
+}
+
+#logo {
+    width: 80px;
+    height: 50px; 
+}
+
+#leftSideCalulator {
+    width:25em;
+    height: auto;
+    border-style: solid;
+    margin: 0;
+}
+
+#selectTown{
+    width:100%;
+}
+
+.blockLabel{
+    font-size: 20px;
+}
+
+#leftSideButton{
+    width: 49%;
+}
+#map{
+    float:right;
+}

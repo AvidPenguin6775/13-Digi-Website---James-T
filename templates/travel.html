@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+		Program:		Travel Planner
+		Purpose:		Calculate a travel plan which also calculates distance, fuel uses, and quickest route
+		Author:			James Titheridge
+		Date:			12/08/2021
+-->
+<head>
+	<meta charset="utf-8"/>
+	<title>Travel Planner</title>
+	<script href="../static\js\travel.js"></script>
+	<link rel="stylesheet" href="../static\css\base.css">
+</head>
+<body>
+	<header>
+		<nav id="navBar">
+			<img id="logo" src="../static\img\test.png">
+			<a id="title" class="title">Travel Planner</a>
+			<button id="navButton">Quit</button>
+			<button id="navButton">Sign Up</button>
+			<button id="navButton">Login</button>
+		</nav>
+	</header>
+	<main>
+		<div id="interface">
+		<!-- Put your inputs and buttons in here -->
+			<div id="leftSideCalulator">
+				<label for="selectTown" class="blockLabel">Starting Town</label>
+				<select id="selectTown" name="selectTown">
+					<option value="07:00">7:00a.m.</option>
+					<option value="07:30">7:30a.m.</option>
+					<option value="08:00">8:00a.m.</option>
+					<option value="08:30">8:30a.m.</option>
+					<option value="09:00">9:00a.m.</option>
+				</select>
+				<label for="selectTown" class="blockLabel">Add Town</label>
+				<select id="selectTown" name="selectTown">
+					<option value="07:00">7:00a.m.</option>
+					<option value="07:30">7:30a.m.</option>
+					<option value="08:00">8:00a.m.</option>
+					<option value="08:30">8:30a.m.</option>
+					<option value="09:00">9:00a.m.</option>
+				</select>
+				<button id="leftSideButton">Add Town</button>
+				<button id="leftSideButton">Remove Town</button>
+				<img id="map" src="../static/img/southIsland.png">
+			</div>
+        <button id="">Add Town</button>
+        <button id="">Remove Town</button>
+        <button id="">Quit</button>
+        <button id="">Reset</button>
+        <button id="">Add Town</button>
+		<button id="startButton" onclick="startButton_click()">Generate Song</button>		
+		</div>
+		
+		<!-- Put your outputs in here -->
+		<p id="Output">Output: </p>
+	
+	</main>
+</body>
+</html>
