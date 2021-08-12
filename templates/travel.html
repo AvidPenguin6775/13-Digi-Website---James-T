@@ -26,14 +26,15 @@
 		<div id="interface">
 		<!-- Put your inputs and buttons in here -->
 			<div id="leftSideCalulator">
-				<label for="selectTown" class="blockLabel">Starting Town</label>
-				<select id="selectTown" name="selectTown">
+				<label for="selectStartingTown" class="blockLabel">Starting Town</label>
+				<select id="selectStartingTown" name="selectTown">
 					<option value="07:00">7:00a.m.</option>
 					<option value="07:30">7:30a.m.</option>
 					<option value="08:00">8:00a.m.</option>
 					<option value="08:30">8:30a.m.</option>
 					<option value="09:00">9:00a.m.</option>
 				</select>
+				<p id="Output">Output: </p>
 				<label for="selectTown" class="blockLabel">Add Town</label>
 				<select id="selectTown" name="selectTown">
 					<option value="07:00">7:00a.m.</option>
@@ -42,21 +43,23 @@
 					<option value="08:30">8:30a.m.</option>
 					<option value="09:00">9:00a.m.</option>
 				</select>
-				<button id="leftSideButton">Add Town</button>
-				<button id="leftSideButton">Remove Town</button>
+				<button id="leftSideButtonLeft" onclick="startButton_click()">Add Town</button>
+				<button id="leftSideButtonRight" onclick="startButton_click()">Remove Town</button>
+			</div>
+			<div id="#centerFuelCalulator">
+				<label for="fuelDistance" class="blockLabel">Distance</label>
+				<input type="number" maxlength="20" name="fuelDistance" id="fuelDistance" required />
+				<label for="fuelPrice" class="blockLabel">Fuel Price</label>
+				<input type="number" maxlength="20" name="fuelPrice" id="fuelPrice" required />
+			</div>
+			<div id="rightSideMap">
 				<img id="map" src="../static/img/southIsland.png">
 			</div>
-        <button id="">Add Town</button>
-        <button id="">Remove Town</button>
+		<!--
         <button id="">Quit</button>
         <button id="">Reset</button>
-        <button id="">Add Town</button>
-		<button id="startButton" onclick="startButton_click()">Generate Song</button>		
+		-->
 		</div>
-		
-		<!-- Put your outputs in here -->
-		<p id="Output">Output: </p>
-	
 	</main>
 </body>
 </html>

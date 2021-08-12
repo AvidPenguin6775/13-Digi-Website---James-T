@@ -1,40 +1,123 @@
 #navBar{
-    background-color: aquamarine;
+    background-color: grey;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 4.75em;
 }
 #navButton{
     float: right;
-    width:70px;
-    height:45px;
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.5em;
+    margin: 0.5em 0.5em 0.5em 0;
 }
 
 #title {
-    font-size: 24px;
+    font-size: 2em;
     text-align: center;
+    color: black;
+    float:left;
+    margin: 0.5em 0.5em 0.5em 0;
 }
 
 #logo {
-    width: 80px;
-    height: 50px; 
+    width: 5em;
+    height: 3.125em; 
+    margin: 0.5em 0.5em 0.5em 0;
+    float:left;
 }
 
 #leftSideCalulator {
     width:25em;
-    height: auto;
     border-style: solid;
-    margin: 0;
+    margin: 1em 1em 1em 1em;
+    position:absolute;
+    height:85%;
+}
+
+#selectStartingTown{
+    width:95%;
+    display:block;
+    margin:0 0.8em 0 0.8em;
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8em;
 }
 
 #selectTown{
-    width:100%;
+    width:95%;
+    display:block;
+    margin:0 0.8em 0 0.8em;
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8em;
 }
 
 .blockLabel{
-    font-size: 20px;
+    font-size: 1.25em;
+    margin:0.8em;
 }
 
-#leftSideButton{
-    width: 49%;
+#leftSideButtonLeft{
+    width: 48%;
+    float: left;
+    margin: 0.4em 0 0 0.4em;
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8em;
 }
+
+#leftSideButtonRight{
+    width: 48%;
+    float: right;
+    margin: 0.4em 0.4em 0 0;
+    background-color: white;
+    color: black;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
 #map{
-    float:right;
+    width: 80%;
+    height:auto;
+}
+
+#navButton:active {
+    background-color: black;
+    color: white;
+}
+
+#navButton:hover {
+    background-color: lightgray;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+#rightSideMap {
+    float: right;
+    width: 60%;
+}
+
+#centerFuelCalulator{
+    left: 26em;
 }
