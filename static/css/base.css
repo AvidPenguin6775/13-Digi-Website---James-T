@@ -37,7 +37,7 @@
     width:25em;
     border-style: solid;
     margin: 1em 1em 1em 1em;
-    position:absolute;
+    position:absolute; 
     height:85%;
 }
 
@@ -63,6 +63,7 @@
     text-align: center;
     text-decoration: none;
     font-size: 0.8em;
+    margin-top: 41em;
 }
 
 .blockLabel{
@@ -114,10 +115,8 @@
   }
 
 #rightSideMap {
-    float: right;
-    width: 60%;
+    width: 50%;
+    float:right;
+    grid-area: right;
 }
 
-#centerFuelCalulator{
-    left: 26em;
-}
