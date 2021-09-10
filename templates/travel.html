@@ -6,60 +6,74 @@
 		Author:			James Titheridge
 		Date:			12/08/2021
 -->
-<head>
-	<meta charset="utf-8"/>
-	<title>Travel Planner</title>
-	<script href="../static\js\travel.js"></script>
-	<link rel="stylesheet" href="../static\css\base.css">
-</head>
-<body>
-	<header>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Travel Planner</title>
+		<script href="../static\js\travel.js"></script>
+		<!--<link rel="stylesheet" href="../static\css\base.css">-->
+		<link rel="stylesheet" href="../static/css/base.css"/>
+		<script src="../static/js/extension_functions.js"></script>
+		<script src="../static/js/dom_interface_functions.js"></script>
+		<script src="../static/js/setup.js"></script>
+	</head>
+
+	<body>
 		<nav id="navBar">
 			<img id="logo" src="../static\img\test.png">
 			<a id="title" class="title">Travel Planner</a>
-			<button id="navButton">Quit</button>
-			<button id="navButton">Sign Up</button>
-			<button id="navButton">Login</button>
+			<button id="navQuit" class="navButton">Quit</button>
+			<button id="navSignUp" class="navButton">Sign Up</button>
+			<button id="navLogin" class="navButton">Login</button>
 		</nav>
-	</header>
-	<main>
-		<div id="interface">
-		<!-- Put your inputs and buttons in here -->
-			<div id="leftSideCalulator">
-				<label for="selectStartingTown" class="blockLabel">Starting Town</label>
-				<select id="selectStartingTown" name="selectTown">
-					<option value="07:00">7:00a.m.</option>
-					<option value="07:30">7:30a.m.</option>
-					<option value="08:00">8:00a.m.</option>
-					<option value="08:30">8:30a.m.</option>
-					<option value="09:00">9:00a.m.</option>
-				</select>
-				<p id="Output">Output: </p>
-				<label for="selectTown" class="blockLabel">Add Town</label>
-				<select id="selectTown" name="selectTown">
-					<option value="07:00">7:00a.m.</option>
-					<option value="07:30">7:30a.m.</option>
-					<option value="08:00">8:00a.m.</option>
-					<option value="08:30">8:30a.m.</option>
-					<option value="09:00">9:00a.m.</option>
-				</select>
-				<button id="leftSideButtonLeft" onclick="startButton_click()">Add Town</button>
-				<button id="leftSideButtonRight" onclick="startButton_click()">Remove Town</button>
-			</div>
-			<div id="#centerFuelCalulator">
-				<label for="fuelDistance" class="blockLabel">Distance</label>
-				<input type="number" maxlength="20" name="fuelDistance" id="fuelDistance" required />
-				<label for="fuelPrice" class="blockLabel">Fuel Price</label>
-				<input type="number" maxlength="20" name="fuelPrice" id="fuelPrice" required />
-			</div>
-			<div id="rightSideMap">
-				<img id="map" src="../static/img/southIsland.png">
-			</div>
-		<!--
-        <button id="">Quit</button>
-        <button id="">Reset</button>
-		-->
+		<div id="leftSideCalulator"> <!--id="leftSideCalulator"-->
+			<button id="buttonSave" class="AddRemoveButtons" onclick="startButton_click()">Save Trip</button>
+			<button id="buttonLoad" class="AddRemoveButtons" onclick="startButton_click()">Load Trip</button>
+			<!--
+			<label for="selectStartingTown" class="blockLabel">Starting Town</label>
+			<select id="selectStartingTown" class="select" name="selectTown">
+				<option value="07:00">7:00a.m.</option>
+				<option value="07:30">7:30a.m.</option>
+				<option value="08:00">8:00a.m.</option>
+				<option value="08:30">8:30a.m.</option>
+				<option value="09:00">9:00a.m.</option>
+			</select>
+			-->
+			<ul id="travel_list">
+				<li class="selected" id="selectedListItem">Products purchased list will go in here</li>
+				<li>Product 1</li>
+				<li>Product 2</li>
+				<li>Product 3</li>
+			</ul>
+			<label for="selectTown" class="blockLabel">Add Town</label>
+			<select id="selectTown" class="select" name="selectTown">
+				<option value="07:00">7:00a.m.</option>
+				<option value="07:30">7:30a.m.</option>
+				<option value="08:00">8:00a.m.</option>
+				<option value="08:30">8:30a.m.</option>
+				<option value="09:00">9:00a.m.</option>
+			</select>
+			<button id="ButtonAdd" class="AddRemoveButtons">Add Town</button>
+			<button id="ButtonRemove" class="AddRemoveButtons">Remove Town</button>
+			<button id="ButtonReset" class="select">Reset List</button>
 		</div>
-	</main>
-</body>
+		<div id="centerFuelCalulator"><!--id="centerFuelCalulator"-->
+			<label for="DistanceTotal" class="blockLabel">Distance</label>
+			<p id="DistanceTotal"></p>
+			<label for="fuelTotalCost" class="blockLabel">Total Fuel Cost</label>
+			<p id="fuelTotalCost"></p>
+			<label for="fuelPrice" class="blockLabel">Fuel Price</label>
+			<input type="number" maxlength="20" name="fuelPrice" id="fuelPrice" required />
+		</div>
+		<div id="rightSideMap">
+			<img id="map" src="../static/img/southIsland.png">
+		</div>
+		<footer>
+			<p>Travel Planner By James Titheridge</p>
+		</footer>
+			<!--
+			<button id="">Reset</button>
+			<button id="">Save</button>
+			<button id="">load</button>
+		-->
+	</body>
 </html>
