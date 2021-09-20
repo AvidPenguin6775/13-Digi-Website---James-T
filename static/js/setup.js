@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function setUpUI() {
         // Clear teh input values
         // Clear the visit information
-        getElement("selectTown").value = "07:00";
         getElement("fuelPrice").value = null;
 
         
