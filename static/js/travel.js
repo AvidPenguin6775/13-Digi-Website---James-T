@@ -27,51 +27,55 @@ distances = [
     [761,254,333,320,639,695,277,432,804,101,437,869,340,559,951,664,101,226,580,288,664,830,497,617,558,0],
 ]
 
-towns list = [
-    [Alexandra],
-    [Blenheim],
-    [Christchurch],
-    [Collingwood],
-    [Cromwell],
-    [Dunedin],
-    [Franz-Josef],
-    [Geraldine],
-    [Gore],
-    [Greymouth],
-    [Haast],
-    [Invercargill],
-    [Kaikoura],
-    [Lake-Tekapo],
-    [Milford-Sound],
-    [Mount-Cook],
-    [Murchison],
-    [Nelson],
-    [Oamaru],
-    [Picton],
-    [Queenstown],
-    [Te-Anau],
-    [Timaru],
-    [Twizel],
-    [Wanaka],
-    [Westport],
+townsList = [
+    "Alexandra",
+    "Blenheim",
+    "Christchurch",
+    "Collingwood",
+    "Cromwell",
+    "Dunedin",
+    "Franz-Josef",
+    "Geraldine",
+    "Gore",
+    "Greymouth",
+    "Haast",
+    "Invercargill",
+    "Kaikoura",
+    "Lake-Tekapo",
+    "Milford-Sound",
+    "Mount-Cook",
+    "Murchison",
+    "Nelson",
+    "Oamaru",
+    "Picton",
+    "Queenstown",
+    "Te-Anau",
+    "Timaru",  
+    "Twizel",
+    "Wanaka",
+    "Westport", 
 ]
 
-startTown = ""
-endTown = ""
-rowNumber =
-colNumber =
+function calculateDistance() {
+    town = document.getElementById("selectTown").value;
+    townNumber = townsList.indexOf(town)
+    
 
-distanceBetweenTown = distances[rowNumber][colNumber]
 
-townNumber = 0 
-while (townNumber < 26)
-    if townlist[townNumber] == starttown {
-        rowNumber = townNumber
-    } 
+    rowNumber = ""
+    colNumber = ""
+    distanceBetweenTown = distances[rowNumber][colNumber]
 
-townVisitedNumber = 0
-totalDistance = 0
-while townVistedNumber < townsVisited {
-    totalDistance = totalDistance + townNumber = townNumber + 1
-    distanceBetweenTown < endTown
+    townNumber = 0 
+    while (townNumber < 26)
+        if (townlist[townNumber] == starttown) {
+            rowNumber = townNumber
+        } 
+
+    townVisitedNumber = 0
+    totalDistance = 0
+    while (townVistedNumber < townsVisited) {
+        totalDistance = totalDistance + townNumber == townNumber + 1;
+        distanceBetweenTown < endTown
+    }
 }

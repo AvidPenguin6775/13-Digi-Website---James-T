@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
         getElement("ButtonAdd").addEventListener('click',function() {addCityToList(getElement("selectTown").value);});
         getElement("ButtonRemove").addEventListener('click',function() {removeCityFromList(getElement("selectedListItem"));});
         getElement("buttonSave").addEventListener('click',function() {saveVisit();});
+        getElement("distanceCal").addEventListener('click',function() {calculateDistance();});
         // Listener for an item being slected in teh list
         getElement("travel_list").addEventListener('click',function(event) {selectListItem(event.target)});
     }
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear the visit information
         getElement("fuelPrice").value = null;
 
-        
         // Clear teh product purchased list
         getElement("travel_list").value = "";
         writeToElement("travel_list","");
