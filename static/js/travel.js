@@ -55,16 +55,29 @@ townsList = [
     "Wanaka",
     "Westport", 
 ]
-
+/*Removing Town Doesnt Work*/
 function calculateDistance() {
-    town = document.getElementById("selectTown").value;
+    travelNumber = 0
+    arrayNumber = 0
+    distancesBetween = 0
+    lastNumber = townsList.indexOf(currentTravel[0])
+    while (travelNumber < currentTravel.length){
+    townNumber = townsList.indexOf(currentTravel[arrayNumber])
+    travelNumber = travelNumber + 1
+    arrayNumber = arrayNumber + 1
+    distanceBetweenTown = distances[townNumber][lastNumber]
+    distancesBetween = distancesBetween + distanceBetweenTown
+    lastNumber = townNumber
+    }
+    document.getElementById("DistanceTotal").innerHTML = distancesBetween;
+}
+
+/*
+currentTravel
+town = document.getElementById("travel_list").value;
+    console.log(town)
     townNumber = townsList.indexOf(town)
-    
-
-
-    rowNumber = ""
-    colNumber = ""
-    distanceBetweenTown = distances[rowNumber][colNumber]
+    console.log(townNumber)
 
     townNumber = 0 
     while (townNumber < 26)
@@ -78,4 +91,4 @@ function calculateDistance() {
         totalDistance = totalDistance + townNumber == townNumber + 1;
         distanceBetweenTown < endTown
     }
-}
+*/
