@@ -1,73 +1,97 @@
-/*	File:			dom_interface_functions.js
-	Author:			Alister Macgregor
-	Last update:	19 August 2021
-	Purpose:		Interface functions for teh pub_rater application
-*/
 
 function addCityToList(TownSelected) {
-	// Adds the new purchse to the list 
-	// No error checking to see if teh purchase is already there
-	// or a blank being added
+	// Removes the last thing in the array
+	currentTravel.pop()
+	// Adds the town to the array
 	currentTravel.push(TownSelected)
-	console.log(currentTravel)
-	let newItem = document.createElement("LI");	// A new list item
-	let newItemText = document.createTextNode(TownSelected);	// The text for teh list item
-	// Add teh text to the list item
+	// A new list item
+	let newItem = document.createElement("LI");
+	// The text for the list item
+	let newItemText = document.createTextNode(TownSelected);
+	// Adds the text to the list
 	newItem.appendChild(newItemText);
-	// Add the new list item to the list
-	getElement("travel_list").appendChild(newItem);	
+	// Adds the new list item to the list
+	getElement("travel_list").appendChild(newItem);
+	// Gets the first town in the array
+	returntrip = currentTravel[0]
+	// Adds it town to the array
+	currentTravel.push(returntrip)
+	//var list = document.getElementById('travel_list');
+	//var entry = document.createElement('li');
+	//entry.appendChild(document.createTextNode(returntrip));
+	//list.appendChild(entry);
+
+	// Starts the caclulate distance function
 	calculateDistance()
 }
 
 function removeCityFromList(TownToRemove) {
-	// Removes teh item from teh list, if there is one to remove
-	travelList = getElement("travel_list")
-	console.log(travelList)
-	Cheese = 0
-	Cheese = travelList.indexOf(getElement("selectedListItem"))
-	console.log(Cheese)
-	if (itemToRemove != null) {
-		itemToRemove.parentNode.removeChild(TownToRemove)
-	}
+	// Makes sure town to remove is not equal to empty 
+	if(TownToRemove != null){
+		// gets the list item to remove
+		listItemToRemove = getElement("selectedListItem")
+		// finds the number of the selected list ite  m 
+		index = [].indexOf.call (listItemToRemove.parentNode.children, listItemToRemove)
+		// Removes it from list 
+		TownToRemove.parentNode.removeChild(TownToRemove)
+		// Removes the specific town from the array
+		currentTravel.splice(index, 1)
+		// Starts the calculate distance function
+		calculateDistance()
+		}
 }
 
 function selectListItem(selectedListItem) {
-	// Sets teh id of teh currently chosen list item so that styles can be applied to it
-	// Unselect previous selection
+	// Sets the id of the currently chosen list item so that styles can be applied to it
+	// Unselects the list item, by removing the id
 	currentSelected = getElement("selectedListItem");
     if (currentSelected != null) {
 		currentSelected.id = "";
 		currentSelected.classList.remove("selected");
 	}
-	// Select teh current one - how it shows is set in CSS
+	// Selects the current selected and adds a class so CSS can work on it & the id
 	selectedListItem.id = "selectedListItem";
 	selectedListItem.classList.add("selected");
 }
 
 function saveTrip(){
+	// Turns the array into a string
     tripList = JSON.stringify(currentTravel)
+	// Sends the string to the local storage of the browser.
     localStorage.setItem("List", tripList)
-	alert("Your travel list has been saved.  Honest.");
+	// Alerts them that they have saved
+	alert("Your travel list has been saved");
 }
 function loadTrip(){
+	// Gets the array string from local storage
 	storedTrip = localStorage.getItem("List")
+	// Unstringifys the stored array
 	storedTripPlaces = JSON.parse(storedTrip)
+	// Sets the main array to the stored array
 	currentTravel = storedTripPlaces
+	// Calculates distance
 	calculateDistance()
-	loadNumber = 0
+	// The loop array count tracker
     ArrayNum = 0
+	// Clears list
 	getElement("travel_list").value = "";
-    while (loadNumber < storedTripPlaces.length){
-    loadedTown = storedTripPlaces[ArrayNum]
-    loadNumber = loadNumber + 1
-    ArrayNum = ArrayNum + 1
-	var list = document.getElementById('travel_list');
-	var entry = document.createElement('li');
-	entry.appendChild(document.createTextNode(loadedTown));
-	list.appendChild(entry);
+	// Only does it the number of times equal to the length of stored array
+    while (ArrayNum < storedTripPlaces.length){
+		// Cycles through the towns in the stored array
+		loadedTown = storedTripPlaces[ArrayNum]
+		// Array Number +1 every pass
+		ArrayNum = ArrayNum + 1
+		// Gets travel list and creates li element
+		var list = document.getElementById('travel_list');
+		var entry = document.createElement('li');
+		// Creates a text node of the town
+		entry.appendChild(document.createTextNode(loadedTown));
+		// Adds it to the list
+		list.appendChild(entry);
 	}
 }
 
 function quit() {
+	// Closes browser window
 	window.close();
 }

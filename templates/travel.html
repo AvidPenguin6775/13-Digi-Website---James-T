@@ -2,15 +2,16 @@
 <html lang="en">
 <!--
 		Program:		Travel Planner
-		Purpose:		Calculate a travel plan which also calculates distance, fuel uses, and quickest route
+		Purpose:		Calculate a travel plan which also calculates distance, and fuel uses
 		Author:			James Titheridge
 		Date:			12/08/2021
 -->
 	<head>
 		<meta charset="utf-8"/>
+		<!--Sets title of website-->
 		<title>Travel Planner</title>
+		<!--Links Scripts & Style Sheets-->
 		<script href="../static\js\travel.js"></script>
-		<!--<link rel="stylesheet" href="../static\css\base.css">-->
 		<link rel="stylesheet" href="../static/css/base.css"/>
 		<script src="../static/js/functions.js"></script>
 		<script src="../static/js/travel.js"></script>
@@ -20,22 +21,26 @@
 
 	<body>
 		<nav id="navBar">
+			<!--Logo in the top right-->
 			<img id="logo" src="../static\img\test.png">
+			<!--Title of the webpage-->
 			<a id="title" class="title">Travel Planner</a>
+			<!--Quit button -->
 			<button id="navQuit" class="navButton">Quit</button>
-			<button id="navSignUp" class="navButton">Sign Up</button>
-			<button id="navLogin" class="navButton">Login</button>
 		</nav>
-		<div id="leftSideCalulator"> <!--id="leftSideCalulator"-->
+		<!--Left side of the calculator-->
+		<div id="leftSideCalulator">
+			<!--Save & Load trip buttons-->
 			<button id="buttonSave" class="AddRemoveButtons">Save Trip</button>
 			<button id="buttonLoad" class="AddRemoveButtons">Load Trip</button>
+			<!--travel list of towns-->
 			<ul id="travel_list">
-				<li class="selected" id="selectedListItem">Products purchased list will go in here</li>
-				<li>Product 1</li>
-				<li>Product 2</li>
-				<li>Product 3</li>
+				<li class="selected" id="selectedListItem">Towns list will go in here</li>
+				<li>Town 1</li>
 			</ul>
+			<!--Label for select town button-->
 			<label for="selectTown" class="blockLabel">Add Town</label>
+			<!--Select town dropdown-->
 			<select id="selectTown" class="select" name="selectTown">
 				<option value="Alexandra">Alexandra</option>
 				<option value="Blenheim">Blenheim</option>
@@ -64,17 +69,23 @@
 				<option value="Wanaka">Wanaka</option>
 				<option value="Westport">Westport</option>
 			</select>
+			<!--Add, Remove and Reset List Buttons-->
 			<button id="ButtonAdd" class="AddRemoveButtons">Add Town</button>
 			<button id="ButtonRemove" class="AddRemoveButtons">Remove Town</button>
 			<button id="ButtonReset" class="select">Reset List</button>
 		</div>
-		<div id="centerFuelCalulator"><!--id="centerFuelCalulator"-->
+		<!--Center of the list-->
+		<div id="centerFuelCalulator">
+			<!--Label for distance & Text for distance-->
 			<label for="DistanceTotal" class="blockLabel">Distance</label>
 			<p id="DistanceTotal"></p>
+			<!--Total Fuel cost & fuel effinceny-->
 			<label for="fuelTotalCost" class="blockLabel">Total Fuel Cost</label>
+			<label for="fuelefficency" class="blockLabel">Fuel Efficency (Km/L)</label>
 			<p id="fuelTotalCost"></p>
 			<label for="fuelPrice" class="blockLabel">Fuel Price</label>
-			<input type="number" maxlength="20" name="fuelPrice" id="fuelPrice" required />
+			<input type="number" maxlength="20" name="fuelPrice" id="fuelPrice"/>
+			<input type="number" maxlength="20" name="fuelefficency" id="fuelefficency"/>
 			<button id="distanceCal" class="AddRemoveButtons">Calculate</button>
 		</div>
 		<div id="rightSideMap">
