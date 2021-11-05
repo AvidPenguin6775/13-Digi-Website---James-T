@@ -1,4 +1,6 @@
-// List of Distances between each town
+function loadDataManually() {
+	"use strict"
+	// List of Distances between each town
 distances = [
     [0,786,755,964,31,190,373,315,136,661,231,202,657,227,370,242,734,865,223,791,93,249,307,169,86,761], 
     [786,0,308,251,733,670,486,446,821,324,643,887,129,534,1081,639,153,116,555,28,794,960,471,592,745,254],
@@ -56,47 +58,4 @@ townsList = [
     "Wanaka",
     "Westport", 
 ]
-// Distance Calculations
-function calculateDistance() {
-    //Sets the variables to 0 to reset them
-    arrayNumber = 0
-    distancesBetween = 0
-    //Sets lastNumber to the first town in CurrentTravel array
-    lastNumber = townsList.indexOf(currentTravel[0])
-    // Start of the loop keeps going until array number is bigger than array length
-    while (arrayNumber < currentTravel.length){
-        // Sets townNumber to the number of the Towns name in Townslist array
-        townNumber = townsList.indexOf(currentTravel[arrayNumber])
-        // Increases array by 1
-        arrayNumber = arrayNumber + 1
-        //Compares the townnumber to the last town to find out the distances between them by using the first number 
-        //To find the  set of numbers then the second number to find out how across it needs to go
-        distanceBetweenTown = distances[townNumber][lastNumber]
-        //Adds all distances together
-        distancesBetween = distancesBetween + distanceBetweenTown
-        //Makes current town the last town
-        lastNumber = townNumber
-    }
-    //Outputs the total distance at the end
-    if (testing == false){
-        document.getElementById("DistanceTotal").innerHTML = distancesBetween;
-        fuelPrice()
-    }
-     if (testing == true){
-        return distancesBetween
-    }
-}
-//Calculates Fuel Price
-function fuelPrice(){
-    //Grabs Distance Total 
-    TotalDistance = document.getElementById("DistanceTotal").innerHTML
-    //Grabs Price & Fuel Effiency of Vehicle
-    price = getElement("fuelPrice").value
-    efficiency = getElement("fuelefficency").value
-    // Litres needed for the trip = Distance / Fuel Efficiency
-    litres = TotalDistance / efficiency
-    // Total Fuel Price is litres x price
-    FuelPrice = litres * price
-    // Outputs Fuel price to  be displayed.
-    document.getElementById("fuelTotalCost").innerHTML = FuelPrice;
 }

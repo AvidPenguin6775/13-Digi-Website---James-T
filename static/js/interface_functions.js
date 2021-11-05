@@ -21,6 +21,8 @@ function addCityToList(TownSelected) {
 	//entry.appendChild(document.createTextNode(returntrip));
 	//list.appendChild(entry);
 
+	//Disables Testing
+	testing = false
 	// Starts the caclulate distance function
 	calculateDistance()
 }
@@ -89,6 +91,11 @@ function loadTrip(){
 		// Adds it to the list
 		list.appendChild(entry);
 	}
+	currentTravel.pop()
+	// Gets the first town in the array
+	startTown = currentTravel[0]
+	// Adds it town to the array
+	currentTravel.push(startTown)
 }
 
 function quit() {
