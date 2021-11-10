@@ -1,3 +1,4 @@
+<!--This documant was refactored to fix wrong way / and add alt text to the images and labels where altered-->
 <!DOCTYPE html>
 <html lang="en">
 <!--
@@ -11,7 +12,7 @@
 		<!--Sets title of website-->
 		<title>Travel Planner</title>
 		<!--Links Scripts & Style Sheets-->
-		<script src="../static\js\travel.js"></script>
+		<script src="../static/js/travel.js"></script>
 		<link rel="stylesheet" href="../static/css/base.css"/>
 		<script src="../static/js/functions.js"></script>
 		<script src="../static/js/travel.js"></script>
@@ -22,7 +23,7 @@
 	<body>
 		<nav id="navBar">
 			<!--Logo in the top right-->
-			<img id="logo" src="../static\img\test.png">
+			<img id="logo" alt="logo" src="../static/img/test.png">
 			<!--Title of the webpage-->
 			<a id="title" class="title">Travel Planner</a>
 			<!--Quit button -->
@@ -31,8 +32,8 @@
 		<!--Left side of the calculator-->
 		<div id="leftSideCalulator">
 			<!--Save & Load trip buttons-->
-			<button id="buttonSave" class="AddRemoveButtons">Save Trip</button>
-			<button id="buttonLoad" class="AddRemoveButtons">Load Trip</button>
+			<button id="buttonSave" class="addRemoveButtons">Save Trip</button>
+			<button id="buttonLoad" class="addRemoveButtons">Load Trip</button>
 			<!--travel list of towns-->
 			<ul id="travel_list">
 				<li class="selected" id="selectedListItem">Towns list will go in here</li>
@@ -70,34 +71,29 @@
 				<option value="Westport">Westport</option>
 			</select>
 			<!--Add, Remove and Reset List Buttons-->
-			<button id="ButtonAdd" class="AddRemoveButtons">Add Town</button>
-			<button id="ButtonRemove" class="AddRemoveButtons">Remove Town</button>
+			<button id="ButtonAdd" class="addRemoveButtons">Add Town</button>
+			<button id="ButtonRemove" class="addRemoveButtons">Remove Town</button>
 			<button id="ButtonReset" class="select">Reset List</button>
 		</div>
 		<!--Center of the list-->
 		<div id="centerFuelCalulator">
 			<!--Label for distance & Text for distance-->
-			<label for="DistanceTotal" class="blockLabel">Distance</label>
-			<p id="DistanceTotal"></p>
+			<label for="distanceTotal" class="blockLabel">Distance</label>
+			<p id="distanceTotal"></p>
 			<!--Total Fuel cost & fuel effinceny-->
 			<label for="fuelTotalCost" class="blockLabel">Total Fuel Cost</label>
 			<label for="fuelefficency" class="blockLabel">Fuel Efficency (Km/L)</label>
 			<p id="fuelTotalCost"></p>
 			<label for="fuelPrice" class="blockLabel">Fuel Price</label>
-			<input type="number" maxlength="20" name="fuelPrice" id="fuelPrice"/>
-			<input type="number" maxlength="20" name="fuelefficency" id="fuelefficency"/>
-			<button id="distanceCal" class="AddRemoveButtons">Calculate</button>
+			<input type="number" name="fuelPrice" id="fuelPrice"/>
+			<input type="number" name="fuelefficency" id="fuelefficency"/>
+			<button id="distanceCal" class="addRemoveButtons">Calculate</button>
 		</div>
 		<div id="rightSideMap">
-			<img id="map" src="../static/img/southIsland.png">
+			<img id="map" alt="map of the south island" src="../static/img/southIsland.png">
 		</div>
 		<footer>
 			<p>Travel Planner By James Titheridge</p>
 		</footer>
-			<!--
-			<button id="">Reset</button>
-			<button id="">Save</button>
-			<button id="">load</button>
-		-->
 	</body>
 </html>

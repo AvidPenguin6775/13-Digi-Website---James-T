@@ -1,5 +1,7 @@
 // List of Distances between each town
-distances = [
+// This document was refactored to  include semi-colons and to declare variables.
+// I required minimal refactoring because when I put it through the validator and it was minimal only thing needed was semi-colons
+var distances = [
     [0,786,755,964,31,190,373,315,136,661,231,202,657,227,370,242,734,865,223,791,93,249,307,169,86,761], 
     [786,0,308,251,733,670,486,446,821,324,643,887,129,534,1081,639,153,116,555,28,794,960,471,592,745,254],
     [755,308,0,509,410,362,395,138,513,258,535,579,183,226,773,331,292,424,247,336,486,652,163,284,424,333], 
@@ -26,9 +28,9 @@ distances = [
     [169,592,284,843,138,261,427,146,316,475,285,371,467,58,474,63,576,708,146,620,200,370,162,0,140,617],
     [86,745,424,839,55,276,287,286,222,469,145,285,607,198,394,211,715,587,231,733,117,273,273,140,0,558],
     [761,254,333,320,639,695,277,432,804,101,437,869,340,559,951,664,101,226,580,288,664,830,497,617,558,0],
-]
+];
 // List of towns in alphabetical order
-townsList = [
+var townsList = [
     "Alexandra",
     "Blenheim",
     "Christchurch",
@@ -55,62 +57,64 @@ townsList = [
     "Twizel",
     "Wanaka",
     "Westport", 
-]
+];
 // Distance Calculations
 function calculateDistance() {
     //Sets the variables to 0 to reset them
-    arrayNumber = 0
-    distancesBetween = 0
+    var arrayNumber = 0;
+    var distancesBetween = 0;
     //Sets lastNumber to the first town in CurrentTravel array
-    lastNumber = townsList.indexOf(currentTravel[0])
+    var lastNumber = townsList.indexOf(currentTravel[0]);
     // Start of the loop keeps going until array number is bigger than array length
     while (arrayNumber < currentTravel.length){
         // Sets townNumber to the number of the Towns name in Townslist array
-        townNumber = townsList.indexOf(currentTravel[arrayNumber])
+        var townNumber = townsList.indexOf(currentTravel[arrayNumber]);
         // Increases array by 1
-        arrayNumber = arrayNumber + 1
+        arrayNumber = arrayNumber + 1;
         //Compares the townnumber to the last town to find out the distances between them by using the first number 
         //To find the  set of numbers then the second number to find out how across it needs to go
-        distanceBetweenTown = distances[townNumber][lastNumber]
+        var distanceBetweenTown = distances[townNumber][lastNumber];
         //Adds all distances together
-        distancesBetween = distancesBetween + distanceBetweenTown
+        distancesBetween = distancesBetween + distanceBetweenTown;
         //Makes current town the last town
-        lastNumber = townNumber
+        lastNumber = townNumber;
     }
     //Outputs the total distance at the end if testing equals false
     if (testing == false){
-        document.getElementById("DistanceTotal").innerHTML = distancesBetween;
-        fuelPrice()
+        document.getElementById("distanceTotal").innerHTML = distancesBetween;
+        totalDistance = distancesBetween;
+        fuelPrice();
     }
     // If testing is set to true return distance to Jasmine
      if (testing == true){
-        return distancesBetween
+        return distancesBetween;
     }
 }
 //Calculates Fuel Price
 function fuelPrice(){
     //Grabs Distance Total 
-    TotalDistance = distancesBetween
+    var price = 0;
+    var efficiency = 0;
     //Grabs Price & Fuel Effiency of Vehicle from html when testing equals false
     if (testing == false){
-        price = getElement("fuelPrice").value
-        efficiency = getElement("fuelefficency").value
+        price = getElement("fuelPrice").value;
+        efficiency = getElement("fuelefficency").value;
     }
     //Sets price and efficiency for testing
     if (testing == true){
-        price = 2.616
-        efficiency = 9.4
+        price = 2.616;
+        efficiency = 9.4;
     }
     // Litres needed for the trip = Distance / Fuel Efficiency
-    litres = TotalDistance / efficiency
+    var litres = totalDistance / efficiency;
     // Total Fuel Price is litres x price
-    FuelPrice = litres * price
+    var FuelPrice = litres * price;
     // If testing is set to true return distance to Jasmine
     if (testing == true){
-        return FuelPrice
+        return FuelPrice;
     }
     // Outputs Fuel price to  be displayed if testing equals false
     if (testing == false){
-        document.getElementById("fuelTotalCost").innerHTML = FuelPrice;
+        document.getElementById("fuelTotalCost").innerHTML = Math.round(FuelPrice);
     }
 }
