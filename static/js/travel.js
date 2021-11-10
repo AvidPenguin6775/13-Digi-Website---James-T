@@ -77,11 +77,12 @@ function calculateDistance() {
         //Makes current town the last town
         lastNumber = townNumber
     }
-    //Outputs the total distance at the end
+    //Outputs the total distance at the end if testing equals false
     if (testing == false){
         document.getElementById("DistanceTotal").innerHTML = distancesBetween;
         fuelPrice()
     }
+    // If testing is set to true return distance to Jasmine
      if (testing == true){
         return distancesBetween
     }
@@ -89,14 +90,27 @@ function calculateDistance() {
 //Calculates Fuel Price
 function fuelPrice(){
     //Grabs Distance Total 
-    TotalDistance = document.getElementById("DistanceTotal").innerHTML
-    //Grabs Price & Fuel Effiency of Vehicle
-    price = getElement("fuelPrice").value
-    efficiency = getElement("fuelefficency").value
+    TotalDistance = distancesBetween
+    //Grabs Price & Fuel Effiency of Vehicle from html when testing equals false
+    if (testing == false){
+        price = getElement("fuelPrice").value
+        efficiency = getElement("fuelefficency").value
+    }
+    //Sets price and efficiency for testing
+    if (testing == true){
+        price = 2.616
+        efficiency = 9.4
+    }
     // Litres needed for the trip = Distance / Fuel Efficiency
     litres = TotalDistance / efficiency
     // Total Fuel Price is litres x price
     FuelPrice = litres * price
-    // Outputs Fuel price to  be displayed.
-    document.getElementById("fuelTotalCost").innerHTML = FuelPrice;
+    // If testing is set to true return distance to Jasmine
+    if (testing == true){
+        return FuelPrice
+    }
+    // Outputs Fuel price to  be displayed if testing equals false
+    if (testing == false){
+        document.getElementById("fuelTotalCost").innerHTML = FuelPrice;
+    }
 }
